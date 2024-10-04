@@ -3,63 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customer Form</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Customer Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    .navbar {
-      background-color: #007bff;
+    body {
+      background-color: #f5f5f5;
     }
-    .nav-link {
-      color: white !important;
-    }
-    .nav-link:hover {
-      color: black !important;
-    }
-    .logout-btn {
+    .container-custom {
       background-color: white;
-      border-radius: 25px;
-      padding: 5px 15px;
-      font-weight: bold;
-      color: #007bff;
-    }
-    .logout-btn:hover {
-      background-color: #f0f0f0;
-    }
-    .container {
-      margin-top: 40px;
-    }
-    .form-box {
-      border: 1px solid lightgray;
       padding: 20px;
       border-radius: 10px;
-      background-color: #f8f9fa;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    .btn-group-custom {
-      margin-top: 10px;
+    .nav-link {
+      color: white;
     }
-    .table-box {
-      margin-top: 20px;
-    }
-    .customer-title {
-      display: flex;
-      align-items: center;
-      font-size: 2rem;
-      font-weight: bold;
-      color: #007bff;
-    }
-    .customer-title img {
-      width: 40px;
-      margin-right: 10px;
-    }
+   .cs{
+     color: #007bff;
+   }
   </style>
 </head>
 <body>
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand text-white" href="#">POS System</a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <a class="navbar-brand" href="#">Pos System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <a class="nav-link" href="#">Home</a>
         </li>
@@ -73,79 +46,91 @@
           <a class="nav-link" href="#">Order</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Order Details</a>
+          <a class="nav-link" href="#">Order Detail</a>
         </li>
       </ul>
-      <button class="btn logout-btn">Log Out</button>
+      <button class="btn btn-outline-light" type="button">Log Out</button>
     </div>
   </div>
 </nav>
 
-<!-- Customer Form -->
-<div class="container">
+<div class="container mt-4 container-custom">
   <div class="row">
+    <!-- Left Side Form -->
     <div class="col-md-4">
-      <div class="form-box">
-        <div class="customer-title">
-          <img src="assets/icon/customer.png" alt="Customer Icon">
-          <span>Customer</span>
+      <h1 class="cs"><i>Customer</i></h1>
+      <form>
+        <div class="mb-3">
+          <label for="customerCode" class="form-label">Code:</label>
+          <input type="text" class="form-control" id="customerCode" placeholder="Enter Code">
         </div>
-        <form>
-          <div class="mb-3">
-            <label for="code" class="form-label">Code :</label>
-            <input type="text" class="form-control" id="code">
-          </div>
-          <div class="mb-3">
-            <label for="name" class="form-label">Name :</label>
-            <input type="text" class="form-control" id="name">
-          </div>
-          <div class="mb-3">
-            <label for="address" class="form-label">Address :</label>
-            <input type="text" class="form-control" id="address">
-          </div>
-          <div class="mb-3">
-            <label for="age" class="form-label">Age :</label>
-            <input type="text" class="form-control" id="age">
-          </div>
-          <div class="mb-3">
-            <label for="contact" class="form-label">Contact :</label>
-            <input type="text" class="form-control" id="contact">
-          </div>
-          <div class="btn-group-custom">
-            <button type="submit" class="btn btn-danger">Save</button>
-            <button type="button" class="btn btn-warning">Update</button>
-            <button type="button" class="btn btn-success">Delete</button>
-          </div>
-        </form>
-      </div>
+        <div class="mb-3">
+          <label for="customerName" class="form-label">Name:</label>
+          <input type="text" class="form-control" id="customerName" placeholder="Enter Name">
+        </div>
+        <div class="mb-3">
+          <label for="customerAddress" class="form-label">Address:</label>
+          <input type="text" class="form-control" id="customerAddress" placeholder="Enter Address">
+        </div>
+        <div class="mb-3">
+          <label for="customerAge" class="form-label">Age:</label>
+          <input type="number" class="form-control" id="customerAge" placeholder="Enter Age">
+        </div>
+        <div class="mb-3">
+          <label for="customerContact" class="form-label">Contact:</label>
+          <input type="text" class="form-control" id="customerContact" placeholder="Enter Contact">
+        </div>
+        <button type="button" class="btn btn-danger">Save</button>
+        <button type="button" class="btn btn-warning">Update</button>
+        <button type="button" class="btn btn-success">Delete</button>
+      </form>
     </div>
 
-    <!-- Customer Table -->
+    <!-- Right Side Search and Table -->
     <div class="col-md-8">
-      <div class="table-responsive table-box">
-        <table class="table table-bordered">
-          <thead class="table-primary">
-          <tr>
-            <th scope="col">Code</th>
-            <th scope="col">Name</th>
-            <th scope="col">Address</th>
-            <th scope="col">Age</th>
-            <th scope="col">Contact</th>
-          </tr>
-          </thead>
-          <tbody>
-          <td>C001</td>
-          <td>Dayan Herath</td>
-          <td>Kandy</td>
-          <td>35</td>
-          <td>0776545342</td>
-          </tbody>
-        </table>
+      <!-- Customer Search -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Customer Search</h5>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Input Customer Name/Code here" aria-label="Customer Search">
+            <select class="form-select" aria-label="Search by">
+              <option value="code">Code</option>
+              <option value="name">Name</option>
+            </select>
+            <button class="btn btn-success" type="button">Search</button>
+          </div>
+          <button class="btn btn-warning float-end" type="button">View All Items</button>
+        </div>
       </div>
+
+      <!-- Customer Table -->
+      <table class="table table-striped">
+        <thead class="table-primary">
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Age</th>
+          <th>Contact</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>001</td>
+          <td>John Doe</td>
+          <td>123 Main St</td>
+          <td>30</td>
+          <td>+1 234 567 890</td>
+        </tr>
+        <!-- Additional customer rows can be added here -->
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -346,9 +346,9 @@
                     <label for="qty" class="form-label">Qty:</label>
                     <input type="number" class="form-control" id="qty" placeholder="Enter qty">
                 </div>
-                <button type="button" class="btn btn-danger">Save</button>
-                <button type="button" class="btn btn-warning">Update</button>
-                <button type="button" class="btn btn-success">Delete</button>
+                <button type="button" id="item-save-btn" class="btn btn-danger">Save</button>
+                <button type="button" id="item-update-btn" class="btn btn-warning">Update</button>
+                <button type="button" id="item-delete-btn" class="btn btn-success">Delete</button>
             </form>
         </div>
 
@@ -364,7 +364,7 @@
                             <option value="code">Code</option>
                             <option value="name">Name</option>
                         </select>
-                        <button class="btn btn-success" type="button">Search</button>
+                        <button class="btn btn-success" id="item-search-btn" type="button">Search</button>
                     </div>
                     <button class="btn btn-warning float-end" type="button">View All Items</button>
                 </div>
@@ -380,13 +380,7 @@
                     <th>Qty</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td>I001</td>
-                    <td>Barcadi rum 750ml</td>
-                    <td>6400.00</td>
-                    <td>150</td>
-                </tr>
+                <tbody id="itemTableBody">
                 <!-- Additional customer rows can be added here -->
                 </tbody>
             </table>
@@ -662,5 +656,6 @@
     });
 </script>
 <script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
 </body>
 </html>

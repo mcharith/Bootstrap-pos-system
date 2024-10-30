@@ -10,6 +10,7 @@ const cleanCustomerForm = () => {
 }
 
 $("#customer_save_btn").on('click', function () {
+   console.log("hi")
    let cusId = $("#customerCode").val();
    let cusName = $("#customerName").val();
    let cusAddress = $("#customerAddress").val();
@@ -98,7 +99,6 @@ function searchCustomerByCode(code) {
    }
    return null;
 }
-
 function searchCustomerByName(name) {
    for (let i in customer_array) {
       if (customer_array[i].cusName.toLowerCase() === name.toLowerCase()) return customer_array[i];

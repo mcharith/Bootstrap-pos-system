@@ -1,48 +1,49 @@
-export default class CustomerModel{
-    constructor(code,name,address,age,contact) {
-        this._code = code;
-        this._name = name;
-        this._address = address;
-        this._age = age;
-        this._contact = contact;
-    }
-    get code() {
-        return this._code;
+export default class CustomerModel {
+    constructor(cusId, cusName, cusAddress, cusAge, cusContact) {
+        this._cusId = cusId;
+        this._cusName = cusName;
+        this._cusAddress = cusAddress;
+        this._cusAge = cusAge;
+        this._cusContact = cusContact;
     }
 
-    set code(value) {
-        this._code = value;
+    get cusId() {
+        return this._cusId;
     }
 
-    get name() {
-        return this._name;
+    set cusId(value) {
+        this._cusId = value;
     }
 
-    set name(value) {
-        this._name = value;
+    get cusName() {
+        return this._cusName;
     }
 
-    get address() {
-        return this._address;
+    set cusName(value) {
+        this._cusName = value;
     }
 
-    set address(value) {
-        this._address = value;
+    get cusAddress() {
+        return this._cusAddress;
     }
 
-    get age() {
-        return this._age;
+    set cusAddress(value) {
+        this._cusAddress = value;
     }
 
-    set age(value) {
-        this._age = value;
+    get cusAge() {
+        return this._cusAge;
     }
 
-    get contact() {
-        return this._contact;
+    set cusAge(value) {
+        this._cusAge = value;
     }
 
-    set contact(value) {
-        this._contact = value;
+    get cusContact() {
+        return this._cusContact;
+    }
+
+    set cusContact(value) {
+        this._cusContact = value;
     }
 }

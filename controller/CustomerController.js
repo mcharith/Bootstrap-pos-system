@@ -11,7 +11,6 @@ const cleanCustomerForm = () => {
    $('#customerAge').val("");
    $('#customerContact').val("");
 }
-
 $("#customer_save_btn").on('click', function () {
    console.log("hi")
    let cusId = $("#customerCode").val();

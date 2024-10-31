@@ -285,7 +285,6 @@
                 <button type="button" id="customer-delete-btn" class="btn btn-success">Delete</button>
             </form>
         </div>
-
         <!-- Right Side Search and Table -->
         <div class="col-md-8">
             <!-- Customer Search -->
@@ -389,126 +388,316 @@
 </div>
 
 <!--Invoice-->
-<div id="invoice-section" class="container mt-4">
-    <div class="row">
-        <!-- Invoice Details -->
-        <div class="col-md-4">
-            <div class="form-header">Invoice Details</div>
-            <div class="form-section">
-                <form>
-                    <div class="form-group">
-                        <label for="orderId">Order Id:</label>
-                        <input type="text" class="form-control" id="orderId">
+<!--<div id="invoice-section" class="container mt-4">-->
+<!--    <div class="row">-->
+<!--        &lt;!&ndash; Invoice Details &ndash;&gt;-->
+<!--        <div class="col-md-4">-->
+<!--            <div class="form-header">Invoice Details</div>-->
+<!--            <div class="form-section">-->
+<!--                <form>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="orderId">Order Id:</label>-->
+<!--                        <input type="text" class="form-control" id="orderId">-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="date">Date:</label>-->
+<!--                        <input type="date" class="form-control" id="date">-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="customerCode">Customer Code:</label>-->
+<!--                        <select class="form-control" id="Customer-Code">-->
+<!--                            <option>Select Customer</option>-->
+<!--                            <option>Select </option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="name">Name:</label>-->
+<!--                        <input type="text" class="form-control" id="name">-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="address">Address:</label>-->
+<!--                        <input type="text" class="form-control" id="address">-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Item Selection &ndash;&gt;-->
+<!--        <div class="col-md-4">-->
+<!--            <div class="form-header">Item Selection</div>-->
+<!--            <div class="form-section">-->
+<!--                <form>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="itemCode">Code:</label>-->
+<!--                        <select class="form-control" id="Item-Code">-->
+<!--                            <option>Select Item</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="itemName">Name:</label>-->
+<!--                        <input type="text" class="form-control" id="item-Name">-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="itemPrice">Price:</label>-->
+<!--                        <input type="number" class="form-control" id="itemPrice">-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="itemQty">Qty:</label>-->
+<!--                        <input type="number" class="form-control" id="itemQty">-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="orderQty">Order Quantity:</label>-->
+<!--                        <input type="number" class="form-control" id="orderQty">-->
+<!--                    </div>-->
+<!--                    <button type="submit" class="btn btn-add btn-block">Add Item</button>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Calculation &ndash;&gt;-->
+<!--        <div class="col-md-4">-->
+<!--            <div class="form-header">Calculation</div>-->
+<!--            <div class="form-section">-->
+<!--                <form>-->
+<!--                    <div class="form-group">-->
+<!--                        <label>Total: 1000/=</label>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label>SubTotal:</label>-->
+<!--                        <input type="text" class="form-control">-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label>Cash:</label>-->
+<!--                        <input type="number" class="form-control">-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label>Discount:</label>-->
+<!--                        <input type="number" class="form-control">-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label>Balance:</label>-->
+<!--                        <input type="number" class="form-control">-->
+<!--                    </div>-->
+<!--                    <button type="submit" class="btn btn-purchase btn-block">Purchase</button>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Item Table &ndash;&gt;-->
+<!--    <div class="table-section">-->
+<!--        <table class="table table-bordered">-->
+<!--            <thead class="table-header">-->
+<!--            <tr>-->
+<!--                <th>Item Code</th>-->
+<!--                <th>Item Name</th>-->
+<!--                <th>Price</th>-->
+<!--                <th>Quantity</th>-->
+<!--                <th>Total</th>-->
+<!--            </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--            <tr>-->
+<!--                <td>001</td>-->
+<!--                <td>Sample Item</td>-->
+<!--                <td>100</td>-->
+<!--                <td>2</td>-->
+<!--                <td>200</td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+<!--        </table>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--Order Form-->
+<div id="invoice-section" class="container-fluid mt-5 ">
+    <h1 class="mx-3">Order Form</h1>
+    <div class="row mt-3 p-3">
+        <div class="col-xl-4 col-lg-6">
+            <div class="bg-white card">
+                <div class="bg-danger card-header text-white" style="font-size: 25px">
+                    Invoice Details
+                </div>
+                <div class="card-body bg-white text-dark">
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-5 ">
+                            <lable>Order ID:</lable>
+                            <input type="text" id="txtOrderId" class="form-control">
+                            <span class="control-error" id="lblorderid"></span>
+                        </div>
+                        <div class="form-group col-7 ">
+                            <lable>Order Date:</lable>
+                            <input type="date" id="txtDate" class="form-control">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="date">Date:</label>
-                        <input type="date" class="form-control" id="date">
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-6">
+                            <lable>Select Customer ID:</lable>
+                            <select class="form-select" aria-label="Search by" id="cmbCustomerId">
+                                <option selected="selected" disabled="disabled">-Select Customer-</option>
+                                <span class="control-error" id="lblselectid"></span>
+                            </select>
+                        </div>
+                        <div class="form-group col-6">
+                            <lable>Customer ID:</lable>
+                            <input type="text" id="txtCustomerId" class="form-control" disabled>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="customerCode">Customer Code:</label>
-                        <select class="form-control" id="Customer-Code">
-                            <option>Select Customer</option>
-                        </select>
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-6">
+                            <lable>Customer Name:</lable>
+                            <input type="text" id="txtCustomerName" class="form-control" disabled>
+                        </div>
+                        <div class="form-group col-6">
+                            <lable>Customer Contact:</lable>
+                            <input type="text" id="txtCustomerContact" class="form-control" disabled>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" class="form-control" id="name">
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-6">
+                            <lable>Customer Address:</lable>
+                            <input type="text" id="txtCustomerAddress" class="form-control" disabled>
+                        </div>
+                        <div class="form-group col-6">
+                            <lable>Customer Age:</lable>
+                            <input type="text" id="txtCustomerAge" class="form-control" disabled>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="address">Address:</label>
-                        <input type="text" class="form-control" id="address">
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
 
-        <!-- Item Selection -->
-        <div class="col-md-4">
-            <div class="form-header">Item Selection</div>
-            <div class="form-section">
-                <form>
-                    <div class="form-group">
-                        <label for="itemCode">Code:</label>
-                        <select class="form-control" id="item-Code">
-                            <option>Select Item</option>
-                        </select>
+        <div class="col-xl-4 col-lg-6">
+            <div class="bg-white card">
+                <div class="bg-danger card-header text-white" style="font-size: 25px">
+                    Item Details
+                </div>
+                <div class="card-body bg-white text-dark">
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-6">
+                            <lable>Select Item Code:</lable>
+                            <select class="form-control" id="cmbItemCode">
+                                <option selected="selected" disabled="disabled">-Select Item-</option>
+<!--                                <span class="control-error" id="lblselectcode"></span>-->
+                            </select>
+                        </div>
+                        <div class="form-group col-6 ">
+                            <lable>Item Code:</lable>
+                            <input type="text" id="txtItemCode" class="form-control" disabled>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="itemName">Name:</label>
-                        <input type="text" class="form-control" id="item-Name">
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-12">
+                            <lable>Description:</lable>
+                            <input type="text" id="txtDescription" class="form-control" disabled>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="itemPrice">Price:</label>
-                        <input type="number" class="form-control" id="itemPrice">
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-6">
+                            <lable>QTY on Hand:</lable>
+                            <input type="text" id="txtQtyOnHand" class="form-control" disabled>
+                        </div>
+                        <div class="form-group col-6">
+                            <lable>Unit Price</lable>
+                            <input type="text" id="txtUnitPrice" class="form-control" disabled>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="itemQty">Qty:</label>
-                        <input type="number" class="form-control" id="itemQty">
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-8">
+                            <lable>Order Quantity</lable>
+                            <input type="number" min="0" id="txtOrderQTY" class="form-control">
+                            <span class="control-error" id="lblorderqty"></span>
+                        </div>
+                        <div class="form-group col-4 mt-4">
+                            <button type="submit" class="btn btn-outline-primary fw-bold" id="btnAddToCart">Add to Cart</button>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="orderQty">Order Quantity:</label>
-                        <input type="number" class="form-control" id="orderQty">
-                    </div>
-                    <button type="submit" class="btn btn-add btn-block">Add Item</button>
-                </form>
+                </div>
             </div>
         </div>
 
-        <!-- Calculation -->
-        <div class="col-md-4">
-            <div class="form-header">Calculation</div>
-            <div class="form-section">
-                <form>
-                    <div class="form-group">
-                        <label>Total: 1000/=</label>
+        <div class="col-xl-4 col-lg-12">
+            <div class="bg-white card">
+                <div class="bg-danger card-header text-white" style="font-size: 25px">
+                    Payment Details
+                </div>
+                <div class="card-body bg-white text-dark">
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-6">
+                            <div class="col-12">
+                                <lable>Total:</lable>
+                            </div>
+                            <div class="col-12">
+                                <span class="text-primary" style="font-size: 30px" id="lblTotal">0.00</span>
+                                Rs/=
+                            </div>
+                        </div>
+                        <div class="form-group col-6">
+                            <div class="col-12">
+                                <lable>Sub Total:</lable>
+                            </div>
+                            <div class="col-12">
+                                <span class="text-danger" style="font-size: 30px" id="lblSubTotal">
+                                    0.00
+                                </span>
+                                Rs/=
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>SubTotal:</label>
-                        <input type="text" class="form-control">
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-6">
+                            <div class="col-12">
+                                <lable>Payment:</lable>
+                            </div>
+                            <div class="col-12">
+                                <input type="number" min="0" class="form-control" id="txtPayment">
+                                <span class="control-error" id="lblpayment"></span>
+                            </div>
+                        </div>
+                        <div class="form-group col-6">
+                            <div class="col-12">
+                                <lable>Discount:</lable>
+                            </div>
+                            <div class="col-12">
+                                <input type="number" min="0" class="form-control" id="txtDiscount">
+                                <span class="control-error" id="lbldisount"></span>
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Cash:</label>
-                        <input type="number" class="form-control">
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-6">
+                            <div class="col-12">
+                                <lable>Balance:</lable>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="txtBalance" disabled>
+                                <span class="control-error" id="lblbalance"></span>
+                            </div>
+                        </div>
+                        <div class="form-group col-4">
+                            <button type="submit" class="btn btn-outline-success mt-4 fw-bold"
+                                    style="text-align: center" id="btnPlaceOrder">Place Order
+                            </button>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Discount:</label>
-                        <input type="number" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Balance:</label>
-                        <input type="number" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-purchase btn-block">Purchase</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- Item Table -->
-    <div class="table-section">
-        <table class="table table-bordered">
-            <thead class="table-header">
-            <tr>
-                <th>Item Code</th>
-                <th>Item Name</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>001</td>
-                <td>Sample Item</td>
-                <td>100</td>
-                <td>2</td>
-                <td>200</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+    <table class="table table-hover border mt-3 p-3 ">
+        <thead class="bg-danger text-white">
+        <tr>
+            <th scope="col">Item Code</th>
+            <th scope="col">Description</th>
+            <th scope="col">Unit Price</th>
+            <th scope="col">Buying Qty</th>
+            <th scope="col">Total</th>
+        </tr>
+        </thead>
+        <tbody class="bg-secondary text-white" id="tblCart"></tbody>
+    </table>
 </div>
-
 <!-- Order Details Section -->
 <div id="order-details-section" class="container-fluid">
     <div class="order-details">
@@ -516,11 +705,11 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label for="orderId" class="form-label">Order Id:</label>
+                    <label for="order-Id" class="form-label">Order Id:</label>
                     <input type="text" class="form-control" id="order-Id" placeholder="Enter order id">
                 </div>
                 <div class="mb-3">
-                    <label for="date" class="form-label">Date:</label>
+                    <label for="orderdate" class="form-label">Date:</label>
                     <input type="date" class="form-control" id="orderDate">
                 </div>
                 <div class="mb-3">
@@ -528,7 +717,7 @@
                     <input type="text" class="form-control" id="cusCode" placeholder="Enter customer code">
                 </div>
                 <div class="mb-3">
-                    <label for="name" class="form-label">Name:</label>
+<!--                    <label for="oh" class="form-label">Name:</label>-->
                     <input type="text" class="form-control" id="cusname" placeholder="Enter customer name">
                 </div>
                 <div class="mb-3">
@@ -592,6 +781,7 @@
         <button class="btn btn-generate">Generate Report</button>
     </div>
 </div>
+
 <script src="../assets/lib/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -657,5 +847,6 @@
 </script>
 <script type="module" src="controller/CustomerController.js"></script>
 <script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/OrderFormController.js"></script>
 </body>
 </html>

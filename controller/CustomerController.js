@@ -1,5 +1,8 @@
-import CustomerModel from "../models/customerModel.js";
+import {CustomerModel} from "../models/customerModel.js";
 import { customer_array } from "../db/database.js";
+// import {loadCustomerCodes} from "./OrderFormController.js";
+import {loadCustomerId} from "./OrderFormController.js";
+
 let selected_customer_index = null;
 const cleanCustomerForm = () => {
    $('#customerCode').val("");
@@ -132,10 +135,11 @@ function updateCustomer(code, name, address, age, contact) {
    }
    return false;
 }
-function saveCustomer(code,name,address,age,contact){
-   let customerModel = new CustomerModel(code,name,address,age,contact);
+function saveCustomer(cusId,name,address,age,contact){
+   let customerModel = new CustomerModel(cusId,name,address,age,contact);
    customer_array.push(customerModel);
-   loadCustomerTable()
+   loadCustomerTable();
+   loadCustomerId();
    // console.log(customerModel);
    return true;
 }

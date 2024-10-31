@@ -1,5 +1,6 @@
 import ItemModel from "../models/itemModel.js";
-import {customer_array, item_array} from "../db/database.js";
+import {customer_array, item_array, order_array} from "../db/database.js";
+import {loadItemCode} from "./OrderFormController.js";
 let selected_item_index = null;
 const cleanItemForm = () => {
     $("#itemCode").val("");
@@ -20,7 +21,6 @@ $("#item-save-btn").on('click', function () {
         loadItemTable()
     }
 });
-
 $("#item-update-btn").on('click',function (){
     let itCode = $("#itemCode").val();
     let itName = $("#itemName").val();
@@ -142,6 +142,7 @@ function updateItem(itCode,itName,price,qty){
 function saveItem(itCode, itName, price, qty) {
     let itemModel = new ItemModel(itCode, itName, price, qty);
     item_array.push(itemModel);
+    loadItemCode();
     // console.log(itemModel);
     return true;
 }
